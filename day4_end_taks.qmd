@@ -1,0 +1,44 @@
+---
+title: "Day 4 End of Day Tasks"
+author: "Tom Gibbens-Matsuyama"
+format: html
+editor: visual
+editor_options: 
+  chunk_output_type: console
+---
+
+## Libraries
+```{r}
+# load libraries
+library(tidyverse)
+library(skimr)
+library(GGally)
+```
+
+## Exploring the Data
+```{r}
+# Explore "diamonds" data
+names(diamonds)
+dim(diamonds)
+summary(diamonds)
+head(diamonds)
+tail(diamonds)
+skimr::skim(diamonds)
+
+# create a pairs plot
+ggpairs(diamonds)
+
+# create a ggplot
+ggplot(data = diamonds, aes(x = price, y = carat, color = cut)) +
+  geom_point()
+
+# create a histogram
+ggplot(data = diamonds, aes(x = carat, fill = cut)) +
+  geom_histogram()
+
+# create a boxplot
+
+ggplot(data = diamonds, aes(x = clarity, y = price)) +
+  geom_boxplot()
+```
+
